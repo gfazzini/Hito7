@@ -84,5 +84,5 @@ Hito7/
 
 ## Repositorio
 
-[GitHub – Hito 7](https://github.com/gfazzini/Hito7)
+Github: https://gfazzini.github.io/Hito7/
 
