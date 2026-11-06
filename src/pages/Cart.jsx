@@ -1,8 +1,10 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext.jsx";
+import { UserContext } from "../context/UserContext.jsx";
 
 function Cart() {
   const { cart, setCart } = useContext(CartContext);
+  const { token } = useContext(UserContext);
 
   const aumentar = (id) => {
     setCart((cartActual) =>
@@ -94,7 +96,7 @@ function Cart() {
 
       <button
         className="btn btn-success mt-3"
-        disabled={cart.length === 0}
+        disabled={!token || cart.length === 0}
       >
         Pagar
       </button>

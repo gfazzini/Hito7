@@ -4,11 +4,14 @@ import { BrowserRouter } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 import App from './App.jsx'
+import UserProvider from "./context/UserContext.jsx"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename="/Hito6">
-      <App />
+      <UserProvider>
+        <App />
+      </UserProvider>
     </BrowserRouter>
   </StrictMode>,
 )

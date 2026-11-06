@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 function Pizza() {
+  const { id } = useParams();
+  console.log("ID recibido:", id);
   const [pizza, setPizza] = useState(null);
 
   useEffect(() => {
-    fetch("https://pizzeria-backend-czr3.onrender.com/api/pizzas/p001")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Respuesta de la API:", data);
-        setPizza(Array.isArray(data) ? data[0] : data);
-      })
-      .catch((error) => console.log("Error:", error));
-  }, []);
+  fetch(`https://pizzeria-backend-czr3.onrender.com/api/pizzas/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Datos recibidos:", data);
+      setPizza(Array.isArray(data) ? data[0] : data);
+    })
+    .catch((error) => {
+      console.log("Error:", error);
+    });
+}, [id]);
 
   if (!pizza) {
     return <p>Cargando pizza...</p>;
