@@ -1,92 +1,88 @@
-# 🍕 Pizzería Mamma Mia — Hito 5
+# Pizzería Mamma Mia – Hito 7
 
-Proyecto desarrollado con React y Vite para el desafío de Desafío Latam. En este hito se implementa la navegación entre páginas utilizando React Router.
+Aplicación web desarrollada con React y JavaScript, como parte del curso Full Stack JavaScript.
 
-## 📁 Estructura del proyecto
+## Tecnologías utilizadas
 
-```text
-pizzeria-mamma-mia/
-├── public/
-│   ├── favicon.svg
-│   └── icons.svg
-├── src/
+- React
+- JavaScript
+- React Router DOM
+- Context API
+- Bootstrap
+- Vite
+- Fetch API
+- CSS
+
+## Estructura del proyecto
+
+Hito7/
+│
+├── docs/
 │   ├── assets/
-│   │   ├── hero.png
-│   │   ├── pexels-amar-12032525.jpg
-│   │   ├── react.svg
-│   │   └── vite.svg
+│   └── index.html
+│
+├── public/
+│
+├── src/
+│   │
 │   ├── componentes/
-│   │   ├── Cardpizza.jsx
-│   │   ├── Header.jsx
-│   │   ├── Navbar.jsx
-│   │   └── footer.jsx
+│   │   └── Navbar.jsx
+│   │
+│   ├── context/
+│   │   ├── CartContext.jsx
+│   │   └── UserContext.jsx
+│   │
 │   ├── pages/
-│   │   ├── Cart.jsx
 │   │   ├── Home.jsx
-│   │   ├── Pizzas.jsx
 │   │   ├── Register.jsx
 │   │   ├── login.jsx
-│   │   ├── notfound.jsx
-│   │   └── profile.jsx
-│   ├── App.css
+│   │   ├── Cart.jsx
+│   │   ├── Pizzas.jsx
+│   │   ├── profile.jsx
+│   │   └── notfound.jsx
+│   │
 │   ├── App.jsx
-│   ├── index.css
 │   ├── main.jsx
-│   └── pizzas.js
+│   └── index.css
+│
 ├── index.html
 ├── package.json
 ├── package-lock.json
-├── vite.config.js
-├── eslint.config.js
-└── README.md
+└── vite.config.js
 ```
 
-## 🛠️ Tecnologías utilizadas
+## Funcionalidades
 
-- React
-- Vite
-- React Router DOM
-- Bootstrap
-- JavaScript
-- CSS
+### Página principal
 
-## 🧭 Rutas implementadas
+- Visualización del catálogo de pizzas.
+- Navegación entre las distintas secciones de la aplicación.
 
-- `/` — Página principal.
-- `/register` — Registro de usuario.
-- `/login` — Inicio de sesión.
-- `/cart` — Carrito de compras.
-- `/pizza/p001` — Detalle de una pizza.
-- `/profile` — Perfil de usuario.
-- `/404` — Página no encontrada.
-- Ruta comodín (`*`) — Muestra la página de error para rutas inexistentes.
+### Detalle de pizzas
 
-## Cómo ejecutar el proyecto
+- Visualización de información individual de cada pizza.
+- Obtención de los datos desde una API mediante Fetch.
+- Uso de parámetros dinámicos con `useParams`.
 
-1. Instalar las dependencias:
+### Carrito de compras
 
-   ```bash
-   npm install
-   ```
+- Visualización de los productos agregados.
+- Cálculo automático del total de la compra.
+- Botón de pago deshabilitado cuando no hay sesión iniciada o el carrito está vacío.
 
-2. Iniciar el servidor de desarrollo:
+### Gestión de usuario
 
-   ```bash
-   npm run dev
-   ```
+- Manejo del estado de sesión mediante Context API.
+- Función de cierre de sesión (`logout`).
+- Visualización condicional de las opciones de navegación según el estado del usuario.
 
-3. Abrir en el navegador la dirección local que muestra la terminal.
+### Rutas protegidas
 
-## Desarrollado por
+- Acceso al perfil condicionado a una sesión iniciada.
+- Redirección al Login cuando no existe una sesión activa.
+- Restricción de acceso a Login y Register cuando el usuario ya tiene una sesión iniciada.
 
-Gabriela Fazzini  
-Desafío Latam — Hito 5
+## Repositorio
 
-
-
-
-https://gfazzini.github.io/hito1/
-https://gfazzini.github.io/hito2/ 
-https://gfazzini.github.io/hito3/   
-https://gfazzini.github.io/hito4/
+[GitHub – Hito 7](https://github.com/gfazzini/Hito7)
 
